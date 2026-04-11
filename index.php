@@ -8,22 +8,42 @@
 </head>
 <body>
     <div class="container">
-        <h1>World Play Ticket Kiosk</h1>
-        <p class="subtitle">Purchase your play session quickly and receive a digital QR ticket.</p>
+        <h1>🌟 WORLD PLAY</h1>
+        <p class="subtitle"> <div class="welcome">Welcome to World Play Arcade!</div> Grab your play session fast • Get QR ticket instantly</p>
 
-        <form action="payment.php" method="POST">
-            <label for="phone">Phone Number</label>
-            <input type="text" id="phone" name="phone" placeholder="Enter phone number" required>
+        <form action="payment.php" method="POST" id="ticketForm">
+            <label for="phone">Phone Number (+94)</label>
+            <input type="tel" id="phone" name="phone" placeholder="07X XXX XXXX" required 
+                   pattern="^(?:0|\+94)?7[01245678]\d{7}$" 
+                   title="Enter valid Sri Lankan mobile number (e.g. 0712345678 or +94712345678)">
 
-            <label for="duration">Select Duration</label>
+            <label for="duration">Select Play Duration</label>
             <select id="duration" name="duration" required>
                 <option value="">-- Select Duration --</option>
                 <option value="30">30 Minutes</option>
                 <option value="60">60 Minutes</option>
             </select>
 
-            <button type="submit">Proceed to Payment</button>
+            <button type="submit">Proceed to Payment →</button>
         </form>
+
+        <div id="errorMessage" class="error-box" style="display: none;"></div>
     </div>
+
+    <script>
+        // Basic client-side validation
+        document.getElementById('ticketForm').addEventListener('submit', function(e) {
+            const phone = document.getElementById('phone').value.trim();
+            const errorDiv = document.getElementById('errorMessage');
+            
+            errorDiv.style.display = 'none';
+            
+            if (!phone) {
+                e.preventDefault();
+                errorDiv.textContent = "Phone number is required.";
+                errorDiv.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>
