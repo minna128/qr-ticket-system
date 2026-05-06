@@ -1,0 +1,154 @@
+/* QR Scanner Styles */
+
+.scanner-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.scanner-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.scanner-header h2 {
+    color: var(--text);
+}
+
+.scanner-viewport {
+    background: var(--card-bg);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 20px;
+    min-height: 300px;
+    position: relative;
+}
+
+#qr-reader {
+    width: 100%;
+}
+
+#qr-reader video {
+    border-radius: var(--radius);
+}
+
+.scanner-divider {
+    text-align: center;
+    position: relative;
+    margin: 24px 0;
+}
+
+.scanner-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--border);
+}
+
+.scanner-divider span {
+    background: var(--darkest);
+    padding: 0 16px;
+    position: relative;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.manual-entry {
+    display: flex;
+    gap: 12px;
+}
+
+.manual-entry input {
+    flex: 1;
+    padding: 14px 16px;
+    background: var(--darker);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.manual-entry input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.manual-entry button {
+    padding: 14px 24px;
+}
+
+/* Scan Result Display */
+.scan-result {
+    background: var(--card-bg);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-top: 20px;
+    display: none;
+}
+
+.scan-result.show {
+    display: block;
+}
+
+.scan-result.success {
+    border-color: var(--success);
+}
+
+.scan-result.error {
+    border-color: var(--danger);
+}
+
+.scan-result .result-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.scan-result .result-icon {
+    font-size: 2rem;
+}
+
+.scan-result .result-details {
+    margin-top: 12px;
+}
+
+.scan-result .detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.scan-result .detail-row:last-child {
+    border-bottom: none;
+}
+
+.scan-result .action-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+}
+
+/* Staff login */
+.staff-login {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.staff-login .card {
+    padding: 40px;
+}
+
+.staff-login h2 {
+    text-align: center;
+    margin-bottom: 24px;
+}

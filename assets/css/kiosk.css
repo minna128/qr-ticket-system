@@ -1,0 +1,588 @@
+/* Kiosk Interface Styles - Touch Friendly */
+
+.kiosk-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+/* Kiosk language switcher */
+.kiosk-lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: rgba(18, 18, 24, 0.85);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    backdrop-filter: blur(10px);
+}
+
+.kiosk-lang-switcher-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 14px;
+}
+
+.kiosk-lang-label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.kiosk-lang-link {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.kiosk-lang-link:hover {
+    border-color: var(--border);
+}
+
+.kiosk-lang-link.active {
+    background: rgba(108, 99, 255, 0.18);
+    border-color: rgba(108, 99, 255, 0.45);
+    color: var(--text);
+}
+
+.kiosk-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.kiosk-header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.kiosk-header p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+/* Duration Cards */
+.duration-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.duration-card {
+    background: var(--card-bg);
+    border: 3px solid var(--border);
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.duration-card:hover,
+.duration-card.selected {
+    border-color: var(--primary);
+    transform: scale(1.02);
+    box-shadow: 0 8px 30px var(--glow);
+}
+
+.duration-card.selected {
+    background: rgba(108, 99, 255, 0.1);
+}
+
+.duration-card .duration-time {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.duration-card .duration-label {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.duration-card .duration-price {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+/* Games Grid */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.game-card {
+    background: var(--card-bg);
+    border: 3px solid var(--border);
+    border-radius: 16px;
+    padding: 25px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+}
+
+.game-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px var(--glow);
+}
+
+.game-card.selected {
+    border-color: var(--secondary);
+    background: rgba(0, 212, 170, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 212, 170, 0.3);
+}
+
+.game-card .game-icon {
+    font-size: 3.5rem;
+    margin-bottom: 12px;
+}
+
+.game-card .game-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+
+.game-card .game-category {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.game-card .game-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+.game-card .game-check {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: var(--secondary);
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.game-card.selected .game-check {
+    display: flex;
+}
+
+/* Games Summary */
+.games-summary {
+    background: var(--card-bg);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 30px;
+}
+
+.games-summary .summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 1.1rem;
+}
+
+.games-summary .summary-row:last-child {
+    border-bottom: none;
+}
+
+.games-summary .total-row {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--secondary);
+    padding-top: 16px;
+    margin-top: 8px;
+    border-top: 2px solid var(--secondary);
+}
+
+/* Phone Input */
+.phone-input-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.phone-prefix {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.phone-input {
+    width: 100%;
+    padding: 18px 16px;
+    background: var(--darker);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.phone-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--glow);
+}
+
+/* Payment Method Cards */
+.payment-methods {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.payment-card {
+    background: var(--card-bg);
+    border: 3px solid var(--border);
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.payment-card:hover,
+.payment-card.selected {
+    border-color: var(--secondary);
+    box-shadow: 0 4px 20px rgba(0, 212, 170, 0.2);
+}
+
+.payment-card.selected {
+    background: rgba(0, 212, 170, 0.1);
+}
+
+.payment-card .payment-icon {
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+
+.payment-card .payment-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+/* QR Display */
+.qr-display {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.qr-display img {
+    width: 250px;
+    height: 250px;
+    border: 4px solid white;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    background: white;
+    padding: 10px;
+}
+
+.ticket-info {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-top: 20px;
+}
+
+.ticket-info .ticket-id {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.ticket-info .ticket-detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+}
+
+.ticket-info .ticket-detail:last-child {
+    border-bottom: none;
+}
+
+.ticket-info .ticket-detail span:last-child {
+    color: var(--text);
+    font-weight: 500;
+}
+
+/* Kiosk navigation */
+.kiosk-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.kiosk-step-indicator {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.step-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--border);
+}
+
+.step-dot.active {
+    background: var(--primary);
+    box-shadow: 0 0 10px var(--glow);
+}
+
+.step-dot.completed {
+    background: var(--secondary);
+}
+
+/* Confirm/Waiting screen */
+.waiting-screen {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.waiting-screen .pulse-icon {
+    font-size: 4rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+}
+
+.summary-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.summary-row:last-child {
+    border-bottom: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--secondary);
+}
+
+@media (max-width: 600px) {
+    .duration-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .payment-methods {
+        grid-template-columns: 1fr;
+    }
+    
+    .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .duration-card .duration-time {
+        font-size: 2rem;
+    }
+}
+
+/* Card Payment Form */
+.card-payment-form {
+    background: var(--card-bg);
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.card-preview {
+    background: linear-gradient(135deg, #6c63ff 0%, #00d4aa 100%);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    color: white;
+    position: relative;
+    min-height: 200px;
+    box-shadow: 0 10px 30px rgba(108, 99, 255, 0.3);
+}
+
+.card-preview .card-chip {
+    width: 50px;
+    height: 40px;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.card-preview .card-number-display {
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 20px;
+    word-spacing: 10px;
+}
+
+.card-preview .card-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.card-preview .card-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 16px;
+    background: var(--darker);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--glow);
+}
+
+.form-group input.error {
+    border-color: #ff4757;
+}
+
+.form-group input.success {
+    border-color: #2ed573;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.error-message {
+    color: #ff4757;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.processing-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.processing-overlay.show {
+    display: flex;
+}
+
+.processing-box {
+    background: var(--card-bg);
+    border: 2px solid var(--primary);
+    border-radius: 20px;
+    padding: 50px;
+    text-align: center;
+    max-width: 400px;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid var(--border);
+    border-top: 5px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.processing-box h3 {
+    color: var(--text);
+    margin-bottom: 10px;
+}
+
+.processing-box p {
+    color: var(--text-muted);
+}
