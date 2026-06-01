@@ -123,3 +123,24 @@ class CountdownTimer {
         if (this.interval) clearInterval(this.interval);
     }
 }
+// app.js
+exports.handler = async (event) => {
+    // This allows your PHP site to talk to AWS without security blocks (CORS)
+    const headers = {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+    };
+
+    // Prepare a friendly message to send back to your PHP site
+    const responseBody = {
+        message: "Hello World! Your AWS Lambda backend is working perfectly.",
+        timestamp: new Date().toISOString()
+    };
+
+    return {
+        statusCode: 200,
+        headers: headers,
+        body: JSON.stringify(responseBody),
+    };
+};
