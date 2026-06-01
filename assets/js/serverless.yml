@@ -1,0 +1,30 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: worldplay
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: serverless
+service: Worldplay
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ap-south-1
+  environment:
+    USER_TABLE_NAME: "MyUserTable"
+    MY_S3_BUCKET: "worldplay-bucket"
+
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+          Resource: "arn:aws:dynamodb:ap-south-1:*:table/MyUserTable"
+
+functions:
+  api:
+    handler: app.handler
+    events:
+      - httpApi: '*'
